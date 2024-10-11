@@ -33,8 +33,8 @@ sudo mkdir -p "$PROJECT_DIR"
 
 # Set permissions
 echo "Setting permissions..."
-sudo chown -R $USER:$USER "$PROJECT_DIR"
-sudo chmod -R 755 "$PROJECT_DIR"
+sudo chown -R www-data:www-data /var/www/html/basicb_project_manager
+sudo chmod -R 755 /var/www/html/basicb_project_manager
 
 # Create tasks.json file
 echo "Creating tasks.json file..."
@@ -353,9 +353,7 @@ $tasks = loadTasks();
 </html>
 EOF
 
-sudo chown -R www-data:www-data /var/www/html/basicb_project_manager
 
-sudo chmod -R 755 /var/www/html/basicb_project_manager
 
 
 # Output completion message
