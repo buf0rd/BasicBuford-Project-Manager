@@ -31,14 +31,15 @@ PROJECT_DIR="/var/www/html/basicb_project_manager"
 echo "Creating project directory at $PROJECT_DIR..."
 sudo mkdir -p "$PROJECT_DIR"
 
+# Create tasks.json file
+echo "Creating tasks.json file..."
+echo "[]" | sudo tee "$PROJECT_DIR/tasks.json"
+
+
 # Set permissions
 echo "Setting permissions..."
 sudo chown -R www-data:www-data /var/www/html/basicb_project_manager
 sudo chmod -R 755 /var/www/html/basicb_project_manager
-
-# Create tasks.json file
-echo "Creating tasks.json file..."
-echo "[]" | sudo tee "$PROJECT_DIR/tasks.json"
 
 # Create index.php file
 cat << 'EOF' | sudo tee "$PROJECT_DIR/index.php"
